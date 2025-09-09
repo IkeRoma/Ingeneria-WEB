@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro de usuario</title>
+</head>
+<body>
+  <center>
+    <main>
+      <h1>Registro de usuario</h1>
+
+      <form action="/register" method="post" autocomplete="on">
+        <div>
+          <label for="nombre">Nombre(s)</label><br />
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Tu nombre"
+            required
+            autocomplete="given-name"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="apellido">Apellido(s)</label><br />
+          <input
+            type="text"
+            id="apellido"
+            name="apellido"
+            placeholder="Tus apellidos"
+            required
+            autocomplete="family-name"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="correo">Correo electrónico</label><br />
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="tucorreo@ejemplo.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="contrasena">Contraseña</label><br />
+          <input
+            type="password"
+            id="contrasena"
+            name="contrasena"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="confirmar">Confirmar contraseña</label><br />
+          <input
+            type="password"
+            id="confirmar"
+            name="confirmar"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+        <br />
+        <div>
+          <button type="submit">Registrarse</button>
+        </div>
+      </form>
+
+      <br />
+      <nav>
+        <a href="login.html">Volver a inicio de sesión</a>
+      </nav>
+    </main>
+  </center>
+</body>
+</html>

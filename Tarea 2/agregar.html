@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agregar registro</title>
+</head>
+<body>
+  <center>
+    <main>
+      <h1>Agregar nuevo registro</h1>
+
+      <form action="/agregar" method="post">
+        <div>
+          <label for="nombre">Nombre</label><br />
+          <input type="text" id="nombre" name="nombre" placeholder="Escribe el nombre" required />
+        </div>
+        <br />
+        <div>
+          <label for="perfil">Perfil</label><br />
+          <input type="text" id="perfil" name="perfil" placeholder="Escribe el perfil" required />
+        </div>
+        <br />
+        <button type="submit">➕ Agregar</button>
+      </form>
+
+      <br />
+      <a href="tablas.html">⬅️ Volver</a>
+    </main>
+  </center>
+</body>
+</html>

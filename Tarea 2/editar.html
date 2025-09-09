@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Editar registro</title>
+</head>
+<body>
+  <center>
+    <main>
+      <h1>Editar registro</h1>
+
+      <form action="/editar" method="post">
+        <div>
+          <label for="nombre">Usuario</label><br />
+          <input type="text" id="nombre" name="nombre" value="Nombre actual" required />
+        </div>
+        <br />
+        <div>
+          <label for="perfil">Perfil</label><br />
+          <select id="perfil" name="perfil" required>
+            <option value="admin" selected>Admin</option>
+            <option value="cliente">Cliente</option>
+          </select>
+        </div>
+        <br />
+        <button type="submit">Enviar</button>
+      </form>
+
+      <br />
+      <a href="tablas.html">⬅️ Volver</a>
+    </main>
+  </center>
+</body>
+</html>

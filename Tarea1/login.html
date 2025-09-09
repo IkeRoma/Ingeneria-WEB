@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inicio de sesión</title>
+</head>
+<body>
+  <center>
+    <main>
+      <h1>Iniciar sesión</h1>
+
+      <form action="/login" method="post" autocomplete="on">
+        <div>
+          <label for="correo">Correo electrónico</label><br />
+          <input
+            type="email"
+            id="correo"
+            name="correo"
+            placeholder="tucorreo@ejemplo.com"
+            required
+            autocomplete="email"
+          />
+        </div>
+        <br />
+        <div>
+          <label for="contrasena">Contraseña</label><br />
+          <input
+            type="password"
+            id="contrasena"
+            name="contrasena"
+            required
+            autocomplete="current-password"
+          />
+        </div>
+        <br />
+        <div>
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+
+      <br />
+      <nav>
+        <a href="forgetPassword.html">¿Olvidaste tu contraseña?</a> |
+        <a href="register.html">Registrarse</a>
+      </nav>
+    </main>
+  </center>
+</body>
+</html>
