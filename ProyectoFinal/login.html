@@ -2,92 +2,40 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de Sesión</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #74ebd5 0%, #ACB6E5 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .container {
-      background: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-      width: 350px;
-      text-align: center;
-    }
-    h2 {
-      margin-bottom: 20px;
-      color: #444;
-    }
-    input {
-      width: 90%;
-      padding: 12px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      font-size: 16px;
-      transition: border-color 0.3s;
-    }
-    input:focus {
-      border-color: #4CAF50;
-      outline: none;
-    }
-    button {
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 12px 25px;
-      margin-top: 15px;
-      border-radius: 10px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #45a049;
-    }
-    #resultado {
-      margin-top: 25px;
-      padding: 12px;
-      background: #f0f0f0;
-      border-radius: 8px;
-      font-weight: bold;
-      color: #333;
-      white-space: pre-line;
-    }
-    .link {
-      display: block;
-      margin-top: 15px;
-      color: #007BFF;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .link:hover {
-      text-decoration: underline;
-    }
-
-  </style>
+  <title>Login - Vista Voyages</title>
+  <link rel="stylesheet" href="CSS/variables.css">
+  <link rel="stylesheet" href="CSS/reset.css">
+  <link rel="stylesheet" href="CSS/base.css">
+  <link rel="stylesheet" href="CSS/navbar.css">
+  <link rel="stylesheet" href="CSS/auth.css">
+  <link rel="stylesheet" href="CSS/responsive.css">
 </head>
-<body>
-  <div class="container">
-    <h2>Inicio de Sesión</h2>
-    <form id="loginForm">
-      <input type="text" id="usuario" placeholder="Usuario" required><br>
-      <input type="password" id="contrasena" placeholder="Contraseña" required><br>
-      <button type="submit">Ingresar</button>
-    </form>
+<body class="login-page">
 
-    <a href="register.html" class="link">¿No tienes cuenta? Regístrate</a>
-    <div id="resultado"></div>
+  <div class="wrapper">
+    <div class="left-section">
+      <img src="imagenes/logosinfondo.png" alt="Vista Voyages Logo">
+    </div>
+
+    <div class="right-section">
+      <h2>Accede a tu cuenta</h2>
+      <p>Inicia sesión para continuar en Vista Voyages</p>
+
+      <form id="loginForm">
+        <input type="text" id="usuario" name="correo" placeholder="Correo electrónico" required>
+        <input type="password" id="contrasena" name="password" placeholder="Contraseña" required>
+        <input type="submit" value="Ingresar">
+      </form>
+
+      <p id="resultado" style="transition: opacity 0.5s;"></p>
+
+      <div class="links">
+        <a href="Password.html">Olvidé mi contraseña</a> | 
+        <a href="Registro.html">Registrarse</a>
+      </div>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  
 </body>
 </html>
