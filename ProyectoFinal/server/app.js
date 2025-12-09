@@ -8,7 +8,7 @@ const PORT = 3000;
 // Conexión a la base de datos
 let conexion = mysql.createConnection({
     host: "localhost",
-    database: "prueba2",
+    database: "preuba3",
     user: "root",
     password: "5485Roma"
 });

@@ -1,5 +1,5 @@
-CREATE DATABASE prueba;
-USE prueba;
+CREATE DATABASE prueba2;
+USE prueba2;
 
 CREATE TABLE Usuarios (
     ID INT PRIMARY KEY AUTO_INCREMENT,

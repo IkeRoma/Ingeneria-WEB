@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <title>Registro - Vista Voyages</title>
-  <!-- Archivos CSS dentro de la carpeta CSS -->
   <link rel="stylesheet" href="CSS/variables.css">
   <link rel="stylesheet" href="CSS/reset.css">
   <link rel="stylesheet" href="CSS/base.css">
@@ -22,21 +21,23 @@
       <h2>Regístrate en Vista Voyages</h2>
       <p>Completa tus datos para crear una cuenta</p>
 
-      <form action="/action_page.php" method="post">
-        <input type="text" name="nombre" placeholder="Nombre" required>
-        <input type="text" name="apellidos" placeholder="Apellidos" required>
-        <input type="email" name="correo" placeholder="Correo electrónico" required>
-        <input type="tel" name="telefono" placeholder="Teléfono" required>
-        <input type="password" name="password" placeholder="Contraseña" required>
-        <input type="password" name="confirmar" placeholder="Confirmar contraseña" required>
+      <form id="registroForm">
+        <input type="text" id="regNombre" name="nombre" placeholder="Nombre" required>
+        <input type="text" id="regApellidos" name="apellidos" placeholder="Apellidos" required>
+        <input type="email" id="regEmail" name="correo" placeholder="Correo electrónico" required>
+        <input type="tel" id="regTelefono" name="telefono" placeholder="Teléfono" required>
+        <input type="password" id="regPassword" name="password" placeholder="Contraseña" required>
+        <input type="password" id="regPassword2" name="confirmar" placeholder="Confirmar contraseña" required>
         <input type="submit" value="Registrarse">
       </form>
 
+      <p id="registroMsg"></p>
+
       <div class="links">
-        <a href="login.html">¿Ya tienes una cuenta? Inicia sesión aquí</a>
+        <a href="Login.html">¿Ya tienes una cuenta? Inicia sesión aquí</a>
       </div>
     </div>
-  </div>
-
+  </div>  
+  <script src="JS/login.js"></script>
 </body>
 </html>
