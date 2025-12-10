@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   function validarEmail(email) {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!regex.test(email))
-      return { valido: false, mensaje: "⚠️ El formato del correo no es válido." };
-    return { valido: true, mensaje: "" };
+    return regex.test(email)
+      ? { valido: true, mensaje: "" }
+      : { valido: false, mensaje: "⚠️ El formato del correo no es válido." };
   }
 
   function validarContrasena(password) {
@@ -60,29 +60,31 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     try {
-      const res = await fetch("/api/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
+      // 🔥 RUTA CORREGIDA
+    const res = await fetch("http://localhost:3000/api/login", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
 
       const data = await res.json();
 
-      if (data.success) {
+      if (!data.error) {
         localStorage.setItem("usuario", JSON.stringify(data.user));
 
         msg.style.color = "green";
-        msg.innerText = data.mensaje;
+        msg.innerText = data.message;
 
-        alert("✅ " + data.mensaje);
+        alert("✅ " + data.message);
 
         setTimeout(() => {
-          window.location.href = "index.html";
+          window.location.href = "Index.html";
         }, 1000);
       } else {
         msg.style.color = "red";
-        msg.innerText = data.mensaje;
-        alert("❌ " + data.mensaje);
+        msg.innerText = data.message;
+        alert("❌ " + data.message);
       }
 
     } catch (error) {
@@ -134,28 +136,23 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     try {
-      const res = await fetch("/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          nombre: nombre,
-          apellidos: apellidos,
-          email: email,
-          telefono: telefono,
-          password: password
-        }),
-      });
+      const res = await fetch("http://localhost:3000/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nombre, apellidos, email, telefono, password }),
+    });
+
 
       const data = await res.json();
 
-      msg.style.color = data.success ? "green" : "red";
-      msg.innerText = data.mensaje;
+      msg.style.color = data.error ? "red" : "green";
+      msg.innerText = data.message;
 
-      if (data.success) {
-        alert("✅ " + data.mensaje);
-        setTimeout(() => window.location.href = "login.html", 1500);
+      if (!data.error) {
+        alert("✅ " + data.message);
+        setTimeout(() => window.location.href = "LogIn.html", 1500);
       } else {
-        alert("❌ " + data.mensaje);
+        alert("❌ " + data.message);
       }
 
     } catch (err) {
@@ -199,22 +196,22 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     try {
-      const res = await fetch("/api/reset", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, passwordNueva: password }),
-      });
+      const res = await fetch("http://localhost:3000/api/reset", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, passwordNueva: password }),
+    });
 
       const data = await res.json();
 
-      msg.style.color = data.success ? "green" : "red";
-      msg.innerText = data.mensaje;
+      msg.style.color = data.error ? "red" : "green";
+      msg.innerText = data.message;
 
-      if (data.success) {
-        alert("✅ " + data.mensaje);
+      if (!data.error) {
+        alert("✅ " + data.message);
         setTimeout(() => window.location.href = "login.html", 1500);
       } else {
-        alert("❌ " + data.mensaje);
+        alert("❌ " + data.message);
       }
 
     } catch (err) {
